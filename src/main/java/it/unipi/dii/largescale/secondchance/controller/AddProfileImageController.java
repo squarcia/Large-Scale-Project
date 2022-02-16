@@ -9,6 +9,8 @@ import main.java.it.unipi.dii.largescale.secondchance.entity.User;
 import main.java.it.unipi.dii.largescale.secondchance.utils.Session;
 import main.java.it.unipi.dii.largescale.secondchance.utils.Utility;
 
+import java.util.Objects;
+
 
 public class AddProfileImageController {
 
@@ -24,11 +26,16 @@ public class AddProfileImageController {
     public void submit() {
 
         String url = btnSubmit.getText();
+
+        if (Objects.equals(url, "")) {
+            Utility.infoBox("The URL's photo is empty!", "Information", "Update failed.");
+            return;
+        }
+
         // Update MongoDB document
         ConnectionMongoDB.connMongo.submitNewProfileImg(url, user.getUsername());
         Utility.infoBox("The URL's photo has been uploaded correctly!", "Information", "Update done.");
+
     }
-
-
 
 }

@@ -94,23 +94,8 @@ class ConnectionMongoDBTest {
         Assertions.assertEquals(0, arrayTest.size());
     }
 
-    @Test
-    @DisplayName("findInsertionByBrand")
-    void findInsertionByBrand() {
-        ArrayList<Document> arrayTest;
 
-        arrayTest =  connMongo.findInsertionByBrand("");
-        Assertions.assertEquals(0, arrayTest.size());
-    }
 
-    @Test
-    @DisplayName("findInsertion")
-    void findInsertion() {
-        ArrayList<Document> arrayTest;
-
-        arrayTest =  connMongo.findInsertionByBrand("");
-        Assertions.assertEquals(0, arrayTest.size());
-    }
 
     @Test
     @DisplayName("buyCurrentInsertion")
@@ -119,15 +104,6 @@ class ConnectionMongoDBTest {
             connMongo.buyCurrentInsertion("",null);
         });
     }
-
-    @Test
-    @DisplayName("deleteBuyInsertion")
-    void deleteBuyInsertion() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            connMongo.deleteBuyInsertion("", null);
-        });
-    }
-
 
     @Test
     @DisplayName("verifyUserInDB")
@@ -169,37 +145,10 @@ class ConnectionMongoDBTest {
     }
 
     @Test
-    @DisplayName("findByInsertionId")
-    void findByInsertionId() {
-        Assertions.assertEquals(false, connMongo.findByInsertionId(""));
-    }
-
-    @Test
     @DisplayName("addInsertion")
     void addInsertion() {
         Assertions.assertThrows(NullPointerException.class, () -> {
             connMongo.addInsertion(null);
-        });
-    }
-
-    @Test
-    @DisplayName("findAllOrders")
-    void findAllOrders() {
-
-        ArrayList<Document> arrayTest;
-
-        arrayTest =  connMongo.findAllOrders(false, "");
-        Assertions.assertEquals(0, arrayTest.size());
-
-        arrayTest =  connMongo.findAllOrders(true, "");
-        Assertions.assertEquals(0, arrayTest.size());
-    }
-
-    @Test
-    @DisplayName("updateBalance")
-    void updateBalance() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            connMongo.updateBalance("");
         });
     }
 

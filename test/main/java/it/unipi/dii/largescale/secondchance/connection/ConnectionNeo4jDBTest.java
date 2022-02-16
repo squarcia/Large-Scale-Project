@@ -136,11 +136,11 @@ class ConnectionNeo4jDBTest {
 
     @Test
     @DisplayName("retrieveFollowedInsertionByUser")
-    void retrieveFollowedInsertionByUser() {
+    void retrieveInterestedInsertionByUser() {
 
         ArrayList<String> arrayTest;
 
-        arrayTest = connNeo.retrieveFollowedInsertionByUser("");
+        arrayTest = connNeo.retrieveInterestedInsertionByUser("");
         Assertions.assertEquals(0, arrayTest.size());
     }
 
